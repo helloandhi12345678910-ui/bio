@@ -148,10 +148,40 @@
       color: #323c44;
     }
 
+    /* Comments cube styling */
+    .cube.cube8 {
+      animation: float8 5.0s ease-in-out 0.4s infinite alternate;
+      min-width: 320px;
+      max-width: 380px;
+      min-height: auto;
+      padding: 1.5rem;
+      align-items: stretch;
+      justify-content: flex-start;
+      text-align: left;
+      overflow: visible;
+    }
+
+    .cube.cube8 .comments-title {
+      color: #56c6ff;
+      font-size: 1.1rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+      text-shadow: 0 2px 8px #56c6ff44;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    .cube.cube8 .utterances-container {
+      width: 100%;
+      max-height: 500px;
+      overflow-y: auto;
+    }
+
     @media (max-width: 800px) {
       .container { gap: 1.25rem; }
       .cube { min-width:210px; max-width:97vw; padding:1.1rem 0.5rem;}
       .cube .cube-title { font-size:1.5rem;}
+      .cube.cube8 { min-width: 100%; max-width: 97vw; padding: 1.2rem; }
     }
 
     @media (max-width: 570px) {
@@ -162,6 +192,7 @@
       }
       .cube { margin:1rem auto; }
       .crypto { font-size: 0.97rem; }
+      .cube.cube8 { margin: 1rem auto; }
     }
 
     .cube.cube1 { animation: float1 4.0s ease-in-out 0s infinite alternate;}
@@ -214,6 +245,11 @@
       100% { transform: translateY(-8px) translateX(6px) rotate(-1deg) scale(1);}
     }
 
+    @keyframes float8 {
+      0%   { transform: translateY(0px) rotate(1deg) scale(1);}
+      100% { transform: translateY(-12px) rotate(-1deg) scale(1.01);}
+    }
+
     footer {
       text-align: center;
       color: #7a7b8e;
@@ -222,6 +258,15 @@
       position: relative;
       z-index: 2;
       letter-spacing: 1px;
+    }
+
+    /* Utterances theme customization */
+    .utterances {
+      max-width: 100% !important;
+    }
+
+    .utterances-frame {
+      max-width: 100% !important;
     }
   </style>
 </head>
@@ -274,6 +319,19 @@
         Bitcoin Wallet:
         <span id="btc-wallet">bc1qq2483e57ssgt2l37nnvsxaypnjvlpjz6qsq2sn</span>
         <button class="copy-btn" type="button" onclick="copyThisText('btc-wallet', this)">Copy</button>
+      </div>
+    </div>
+
+    <div class="cube cube8">
+      <div class="comments-title">Comments</div>
+      <div class="utterances-container">
+        <script src="https://utteranc.es/client.js"
+          repo="helloandhi12345678910-ui/bio"
+          issue-term="pathname"
+          theme="dark-blue"
+          crossorigin="anonymous"
+          async>
+        </script>
       </div>
     </div>
   </div>
